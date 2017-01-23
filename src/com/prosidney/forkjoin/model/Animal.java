@@ -1,4 +1,4 @@
-package com.prosidney.forkjoin;
+package com.prosidney.forkjoin.model;
 
 /**
  * Created by Sidney on 2017-01-23.
@@ -30,5 +30,14 @@ public class Animal {
 
     public void setMedicated(boolean medicated) {
         isMedicated = medicated;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", qtdPills=" + qtdPills +
+                ", isMedicated=" + isMedicated +
+                '}';
     }
 }

@@ -1,10 +1,7 @@
 package com.prosidney.functionalinterfaces;
 
-import com.prosidney.douts.Accumulator;
-
 import java.math.BigDecimal;
 import java.util.function.*;
-import java.util.stream.LongStream;
 
 /**
  * Created by Sidney on 2017-01-18.

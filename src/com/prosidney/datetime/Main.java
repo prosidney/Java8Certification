@@ -1,7 +1,7 @@
 package com.prosidney.datetime;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
+import java.time.format.*;
 
 /**
  * Created by admin on 24/01/17.

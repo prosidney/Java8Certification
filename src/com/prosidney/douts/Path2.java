@@ -10,7 +10,8 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class Path2 {
     public static void main(String[] args) throws IOException {
         Path3 mfc = new Path3();
-        Files.walkFileTree(Paths.get("/Users/admin/git_repositories/prosidney/Java8Certification/pathtest"), mfc);
+
+        Files.walkFileTree(Paths.get("pathtest"), mfc);
         System.out.println(mfc.getCount());
     }
 

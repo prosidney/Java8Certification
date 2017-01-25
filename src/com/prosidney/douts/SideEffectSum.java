@@ -5,7 +5,7 @@ import java.util.stream.LongStream;
 /**
  * Created by Sidney on 2017-01-18.
  */
-public class Main {
+public class SideEffectSum {
     public static void main(String args[]){
         System.out.println(sideEffectSum(10));
     }

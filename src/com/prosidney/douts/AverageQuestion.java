@@ -16,6 +16,7 @@ public class AverageQuestion {
         double averagePrice = books.stream().filter(b->b.getPrice()>10)
                 .mapToDouble(b->b.getPrice())
                 .average().getAsDouble();
+
         System.out.println(averagePrice);
     }
 

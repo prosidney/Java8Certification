@@ -1,6 +1,7 @@
 package com.prosidney.formatting;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +18,9 @@ public class Main {
         /**
          * Formatting numbers
          */
-        NumberFormat.getInstance().format(x);
+        final NumberFormat numberFormat = NumberFormat.getInstance();
+        numberFormat.format(x);
+
         NumberFormat.getInstance(Locale.GERMANY).format(x);
 
         NumberFormat.getCurrencyInstance();
@@ -50,10 +53,6 @@ public class Main {
         DateFormat.getDateTimeInstance();
         DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT);
         DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, Locale.UK).format(dt);
-
-
-
-
 
 
         Locale.setDefault(Locale.CHINESE);

@@ -34,12 +34,14 @@ public class MedicateAnimalTask extends RecursiveTask {
 
 
             final MedicateAnimalTask task1 = new MedicateAnimalTask(animals, start, middle);
-
-            task1.fork();
-
             final MedicateAnimalTask task2 = new MedicateAnimalTask(animals, middle, end);
 
-            return task2.compute() + (Integer) task1.join();
+
+            task1.fork();
+            Integer compute = task2.compute();
+            Integer join = (Integer) task1.join();
+
+            return compute + join;
         }
     }
 

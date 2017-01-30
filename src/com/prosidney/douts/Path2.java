@@ -1,5 +1,6 @@
 package com.prosidney.douts;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -9,6 +10,11 @@ import java.nio.file.attribute.BasicFileAttributes;
  */
 public class Path2 {
     public static void main(String[] args) throws IOException {
+        File[] files = File.listRoots();
+        for (int i = 0; i < files.length; i++) {
+            System.out.println(files[i]);
+        }
+
         Path3 mfc = new Path3();
 
         Files.walkFileTree(Paths.get("pathtest"), mfc);

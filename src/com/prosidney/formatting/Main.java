@@ -18,9 +18,7 @@ public class Main {
         /**
          * Formatting numbers
          */
-        final NumberFormat numberFormat = NumberFormat.getInstance();
-        numberFormat.format(x);
-
+        NumberFormat.getInstance().format(x);
         NumberFormat.getInstance(Locale.GERMANY).format(x);
 
         NumberFormat.getCurrencyInstance();

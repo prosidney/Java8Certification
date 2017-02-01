@@ -1,4 +1,4 @@
-package com.prosidney.douts;
+package com.prosidney.nio;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 /**
  * Created by admin on 25/01/17.
  */
-public class Path2 {
+public class MatchExample {
     public static void main(String[] args) throws IOException {
         File[] files = File.listRoots();
         for (int i = 0; i < files.length; i++) {

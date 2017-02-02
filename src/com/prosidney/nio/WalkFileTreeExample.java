@@ -3,6 +3,7 @@ package com.prosidney.nio;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.EnumSet;
 
 /**
  * Created by admin on 01/02/17.
@@ -10,7 +11,10 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class WalkFileTreeExample {
     public static void main(String[] args) throws IOException {
         MyFileVisitor mfv = new MyFileVisitor();
-        Files.walkFileTree(Paths.get("/Users/admin/git_repositories/prosidney/Java8Certification/pathtest"), mfv);
+        Files.walkFileTree(Paths.get("/Users/admin/git_repositories/prosidney/Java8Certification/pathtest"),
+                           EnumSet.of(FileVisitOption.FOLLOW_LINKS),
+                           5,
+                           mfv);
     }
 
     public static class MyFileVisitor implements FileVisitor<Path> {

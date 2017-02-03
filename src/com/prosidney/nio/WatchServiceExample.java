@@ -3,15 +3,15 @@ package com.prosidney.nio;
 import java.io.IOException;
 import java.nio.file.*;
 
-/**
+/**x
  * Created by admin on 02/02/17.
  */
 public class WatchServiceExample {
     public static void main(String[] args) throws IOException {
         try (WatchService service = FileSystems.getDefault().newWatchService()) {
             // Register for events
-            Path zooData = Paths.get("/Users/admin/git_repositories/prosidney/Java8Certification/nonjava");
-            Path zooLog = Paths.get("/Users/admin/git_repositories/prosidney/Java8Certification/pathtest");
+            Path zooData = Paths.get("/Users/Sidney/Dev/repositories/Java8Certification/nonjava");
+            Path zooLog = Paths.get("/Users/Sidney/Dev/repositories/Java8Certification/pathtest");
 
             zooData.register(service, StandardWatchEventKinds.ENTRY_CREATE,
                                       StandardWatchEventKinds.ENTRY_DELETE,
@@ -20,7 +20,12 @@ public class WatchServiceExample {
             zooLog.register(service,StandardWatchEventKinds.ENTRY_MODIFY);
 
             for(;;) {
-
+                /**
+                 * WatchKey MUST has one of the three WatchKey.
+                 * 1-Ready
+                 * 2-Invalid
+                 * 3-Signalled
+                 */
                 WatchKey key;
 
                 try {

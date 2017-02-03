@@ -10,13 +10,24 @@ import java.nio.file.Paths;
 public class PathResolveExample {
     public static void main(String[] args) throws IOException {
         Path p1 = Paths.get("/pathtest/dir1/dir12/d.java");
-        Path p2 = Paths.get("/pathtest/dir2/b.java");
+        Path p2 = Paths.get("/pathtest/a.java");
 
 
-        System.out.println(p1.resolve(p2));
+        System.out.println("path resolve");
+        Path toResolvePath = Paths.get("/pathtest/a.java");
+        System.out.println(p1.resolve(toResolvePath));
+        System.out.println();
+        System.out.println();
 
+        System.out.println("path relativize");
         System.out.println(p1.relativize(p2));
+        System.out.println();
+        System.out.println();
 
-        System.out.println(p1.resolveSibling(p2));
+        System.out.println("path resolveSibling");
+        Path siblingPath = Paths.get("siblings.java");
+        System.out.println(p1.resolveSibling(siblingPath));
+        System.out.println();
+        System.out.println();
     }
 }

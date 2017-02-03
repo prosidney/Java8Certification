@@ -2,6 +2,7 @@ package com.prosidney.nio;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.concurrent.TimeUnit;
 
 /**x
  * Created by admin on 02/02/17.
@@ -35,6 +36,22 @@ public class WatchServiceExample {
                     key = service.take();
                 } catch (InterruptedException x) {
                     break;
+                }
+
+                /**
+                 * Retrieves and removes the next watch key, or null} if none are
+                 * present.
+                 */
+                key = service.poll();
+
+                try {
+                    /**
+                     * Retrieves and removes the next watch key, or null} if none are
+                     * present.
+                     */
+                    key = service.poll(10, TimeUnit.MICROSECONDS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
 
 

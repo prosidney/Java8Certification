@@ -1,6 +1,7 @@
 package com.prosidney.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
 
@@ -16,6 +17,8 @@ public class MaxValue {
         System.out.println(ls.stream().reduce(Integer.MIN_VALUE, integerBinaryOperator));
         System.out.println(ls.stream().max(Integer::max).get());
 
-        System.out.println(ls.stream().max((a, b) -> a > b ? a : b));
+        Comparator<Integer> comparator = (a, b) -> a > b ? a : b;
+
+        System.out.println(ls.stream().max(comparator).get());
     }
 }

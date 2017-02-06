@@ -29,5 +29,10 @@ public class PathResolveExample {
         System.out.println(p1.resolveSibling(siblingPath));
         System.out.println();
         System.out.println();
+
+
+        Path toNormalize = Paths.get("//pathtest//..//a.java");
+        System.out.println("path toNormalize");
+        System.out.println(toNormalize.normalize());
     }
 }

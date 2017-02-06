@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by admin on 06/02/17.
@@ -26,7 +28,8 @@ public class PartitionBy {
                         Collectors.mapping(b -> b.getName(), Collectors.toList()))
         ).forEach((key, value) -> System.out.println(key + ""+ value));
 
-
+        final IntStream intStream = IntStream.rangeClosed(10, 15);
+        final Stream<Integer> boxed = intStream.boxed();
     }
 
     public static class Movie{

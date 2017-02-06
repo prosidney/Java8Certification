@@ -41,6 +41,14 @@ public class CollectWithMapping {
         final List<String> collect2 = movies.stream().map(Movie::getName).collect(Collectors.toList());
         System.out.println(collect2);
 
+
+        final Map<Character, Set<String>> collectMaster =
+                movies.stream().collect(
+                        Collectors.groupingBy(Movie::getRating,
+                                HashMap::new,
+                                Collectors.mapping(Movie::getName, Collectors.toSet())
+                        ));
+        System.out.println(collectMaster);
     }
 
     public static class Movie{

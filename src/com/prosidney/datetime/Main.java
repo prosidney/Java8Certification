@@ -1,5 +1,6 @@
 package com.prosidney.datetime;
 
+import java.text.DateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -50,8 +51,5 @@ public class Main {
          *                                          Formatting <any>Date
          */
         final String localDateFormatted = localDate.format(DateTimeFormatter.BASIC_ISO_DATE);
-
-
-
     }
 }

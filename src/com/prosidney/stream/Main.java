@@ -26,6 +26,8 @@ public class Main {
                 new Transaction(alan, 2012, 950)
         );
 
+        final double sum = transactions.stream().mapToDouble(Transaction::getValue).sum();
+        System.out.println(sum);
 
         List<Transaction> question1 =
                 transactions.stream()

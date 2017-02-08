@@ -4,6 +4,9 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
@@ -59,6 +62,8 @@ public class Main {
         final String formatted = df.format(dt);
         System.out.println(formatted);
 
+        df.parse("");
+
 
         LocalDate d1 = LocalDate.parse("2015-02-05", DateTimeFormatter.ISO_DATE);//T17:13:50");
         LocalDate d2 = LocalDate.of(2015, 2, 5);
@@ -66,6 +71,12 @@ public class Main {
         System.out.println(d1);
         System.out.println(d2);
         System.out.println(d3);
+
+
+        LocalDate.parse();
+        LocalTime.parse()
+        LocalDateTime.parse();
+        ZonedDateTime.parse();
 
     }
 }

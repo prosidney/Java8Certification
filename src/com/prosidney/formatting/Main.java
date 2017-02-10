@@ -72,11 +72,5 @@ public class Main {
         System.out.println(d2);
         System.out.println(d3);
 
-
-        LocalDate.parse();
-        LocalTime.parse()
-        LocalDateTime.parse();
-        ZonedDateTime.parse();
-
     }
 }

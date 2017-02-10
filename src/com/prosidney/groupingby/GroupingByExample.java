@@ -1,9 +1,6 @@
 package com.prosidney.groupingby;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -36,5 +33,9 @@ public class GroupingByExample {
         });
 
         System.out.println(counting.get());
+
+
+        Optional<Integer> reduce = names.stream()   .map(String::length).reduce((a, b) -> a + b);
+        System.out.println(reduce);
     }
 }

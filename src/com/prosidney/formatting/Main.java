@@ -58,6 +58,7 @@ public class Main {
 
         Locale.setDefault(Locale.CHINESE);
 
+
         DateFormat df = DateFormat.getDateInstance();
         final String formatted = df.format(dt);
         System.out.println(formatted);

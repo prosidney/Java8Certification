@@ -1,5 +1,9 @@
 package com.prosidney.resourcebundle;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -9,6 +13,7 @@ import java.util.ResourceBundle;
  */
 public class Main {
     public static void main(String args[]){
+        final Locale locale = new Locale("en", "UK");
         Locale myloc = new Locale.Builder().setLanguage("en").setRegion("UK").build(); //L1
         ResourceBundle msgs = ResourceBundle.getBundle("mymsgs", myloc);
 
@@ -18,6 +23,11 @@ public class Main {
             String val = msgs.getString(key);
             System.out.println(key+" : "+val);
         }
+
+        final TemporalAdjuster adjuster = TemporalAdjusters.next(DayOfWeek.FRIDAY);
+
+        final LocalDate with = LocalDate.now().with(adjuster);
+        System.out.println(with);
 
     }
 }

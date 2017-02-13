@@ -16,6 +16,8 @@ import java.util.Locale;
  */
 public class Main {
     public static void main(String[] args) throws Exception{
+        Locale.getDefault();
+
         double x = 12345.123;
 
         /**

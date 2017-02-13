@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Sidney on 2017-02-10.
  */
-public class Main {
+public class SobreCollectors {
     public static void main(String args[]){
         Trader raoul = new Trader("Raoul", "Cambridge");
         Trader mario = new Trader("Mario","Milan");
@@ -35,20 +35,20 @@ public class Main {
                 .ifPresent(System.out::println);
 
         transactions.stream().collect(
-                Collectors.groupingBy(tr->tr.getTrader(),
-                        Collectors.toSet())).forEach((key, value) -> {
+                java.util.stream.Collectors.groupingBy(tr->tr.getTrader(),
+                        java.util.stream.Collectors.toSet())).forEach((key, value) -> {
             System.out.println(key.getName());
             System.out.println(value);
         });
 
         transactions.stream().collect(
-                Collectors.groupingBy(tr->tr.getTrader()))
+                java.util.stream.Collectors.groupingBy(tr->tr.getTrader()))
                 .forEach((key, value) -> {
             System.out.println(key.getName());
 
             value.stream().collect(
-                    Collectors.groupingBy(tr -> tr.getYear(),
-                            Collectors.toList()
+                    java.util.stream.Collectors.groupingBy(tr -> tr.getYear(),
+                            java.util.stream.Collectors.toList()
                     )).forEach((key1, value1)->{
                 System.out.println("    "+key1);
                 System.out.println("        "+value1);
@@ -57,20 +57,24 @@ public class Main {
         });
 
 
-        //COLOCAR NO NOTES QUE SE TIVER .mapping, tem que ter o segundo parametro(downstream).
         List<Integer> collect =
                 transactions.stream().collect(
-                        Collectors.mapping(tr -> tr.getYear(),
-                                Collectors.toList()
+                        java.util.stream.Collectors.mapping(tr -> tr.getYear(),
+                                java.util.stream.Collectors.toList()
                         )
                 );
 
 
         Map<Boolean, List<Transaction>> collect1 = transactions.stream().collect(
-                Collectors.partitioningBy(t -> t.getValue() > 500)
+                java.util.stream.Collectors.partitioningBy(t -> t.getValue() > 500)
+        );
+        System.out.println(collect1);
+
+        transactions.stream().collect(
+                Collectors.toMap(tr->tr.getYear(), p->p)
         );
 
-        System.out.println(collect1);
+
 
 
     }

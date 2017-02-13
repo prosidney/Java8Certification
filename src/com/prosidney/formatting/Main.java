@@ -26,10 +26,10 @@ public class Main {
         NumberFormat.getInstance().format(x);
         NumberFormat.getInstance(Locale.GERMANY).format(x);
 
-        NumberFormat.getCurrencyInstance();
+        final NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         NumberFormat.getCurrencyInstance(Locale.GERMANY);
 
-        NumberFormat.getIntegerInstance();
+        final NumberFormat integerInstance = NumberFormat.getIntegerInstance();
         NumberFormat.getIntegerInstance(Locale.GERMANY);
 
         NumberFormat.getNumberInstance();

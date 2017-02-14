@@ -70,12 +70,31 @@ public class SobreCollectors {
         );
         System.out.println(collect1);
 
-        transactions.stream().collect(
-                Collectors.toMap(tr->tr.getYear(), p->p)
-        );
+
+        Comparator<Transaction> c1 =  (b1, b2)->b1.getTrader().getName().compareTo(b2.getTrader().getName()); //1
+
+        transactions.stream().sorted(c1.reversed()).forEach(tr->{
+            System.out.println(tr.getTrader().getName());
+        });
+
+        final Transaction transaction = transactions.stream().max(c1).get();
+        System.out.println(transaction.getTrader());
 
 
+        System.out.println("--------------------");
+        transactions.stream()
+                .sorted(c1)
+                .sorted(c1.thenComparing((t1) -> {
+                    return t1.getYear();
+                }).reversed())
+                .forEach(tr->{
+                    System.out.println(tr.getTrader().getName() + " - " + tr.getYear());
+                });
 
+        /**System.out.println(names.stream().collect(Collectors.summarizingInt(x->x)).getSum());**/
+
+        final IntSummaryStatistics summaryStatistics = transactions.stream().collect(Collectors.summarizingInt((Transaction::getValue)));
+        System.out.println(summaryStatistics.getAverage());
 
     }
 }

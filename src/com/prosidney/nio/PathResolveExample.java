@@ -21,7 +21,7 @@ public class PathResolveExample {
 
 
         System.out.println("path resolve");
-        Path toResolvePath = Paths.get("/pathtest/a.java");
+        Path toResolvePath = Paths.get("pathtest/a.java");
         System.out.println(p1.resolve(toResolvePath));
         System.out.println();
         System.out.println();

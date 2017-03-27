@@ -34,11 +34,13 @@ public class SobreCollectors {
                 .min(Comparator.comparing(Transaction::getYear))
                 .ifPresent(System.out::println);
 
+        final String oi="oi";
         transactions.stream().collect(
                 java.util.stream.Collectors.groupingBy(tr->tr.getTrader(),
                         java.util.stream.Collectors.toSet())).forEach((key, value) -> {
             System.out.println(key.getName());
             System.out.println(value);
+            System.out.println(oi);
         });
 
         transactions.stream().collect(

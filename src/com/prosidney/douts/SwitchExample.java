@@ -10,17 +10,19 @@ public class SwitchExample {
         input[0] = "a";
         input[1] = "A";
 
-        test(input, "a");
+        test(input);
     }
 
-    public static void test(String[] args, final String verificator2){
+    public static void test(String[] args){
+        final String verificator2 = "b";
         final String verificator = "a";
+        String opa = "opa";
         for(String arg : args){
-            switch(arg){
+            switch(opa){
                 case verificator : System.out.println("great!");
                     break;
-                /**case verificator2 : System.out.println("great!");
-                    break;**/
+                case verificator2 : System.out.println("great!");
+                    break;
                 default : System.out.println("unknown");
             }
         }

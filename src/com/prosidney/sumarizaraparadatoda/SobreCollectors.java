@@ -85,17 +85,14 @@ public class SobreCollectors {
 
         System.out.println("--------------------");
         transactions.stream()
-                .sorted(c1)
-                .sorted(c1.thenComparing((t1) -> {
-                    return t1.getYear();
-                }).reversed())
+                .sorted(c1.thenComparingInt(Transaction::getYear))
                 .forEach(tr->{
-                    System.out.println(tr.getTrader().getName() + " - " + tr.getYear());
+                    System.out.println(tr.getTrader().getName() + " - " + tr.getValue());
                 });
 
-        /**System.out.println(names.stream().collect(Collectors.summarizingInt(x->x)).getSum());**/
 
-        final IntSummaryStatistics summaryStatistics = transactions.stream().collect(Collectors.summarizingInt((Transaction::getValue)));
+        final IntSummaryStatistics summaryStatistics = transactions.stream().collect(
+                Collectors.summarizingInt((Transaction::getValue)));
         System.out.println(summaryStatistics.getAverage());
 
     }
